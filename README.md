@@ -1,7 +1,7 @@
 JoinMyVerse CLI
 =================
 
-JoinMyVerse CLI
+JoinMyVerse CLI. NPM package https://www.npmjs.com/package/jmvx
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/oclif-hello-world.svg)](https://npmjs.org/package/oclif-hello-world)

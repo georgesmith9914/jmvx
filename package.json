@@ -19,7 +19,9 @@
   "dependencies": {
     "@oclif/core": "^1",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^2.0.1"
+    "@oclif/plugin-plugins": "^2.0.1",
+    "@types/inquirer": "^8.2.1",
+    "inquirer": "^8.2.3"
   },
   "devDependencies": {
     "@oclif/test": "^2",
@@ -48,8 +50,8 @@
     ],
     "topicSeparator": " ",
     "topics": {
-      "jmv": {
-        "description": "Say jmv to the world and others"
+      "init": {
+        "description": "Init projects"
       }
     }
   },
