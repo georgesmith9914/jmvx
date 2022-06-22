@@ -12,7 +12,7 @@ export class JMV extends Command {
 
   async run() {
     const {flags} = await this.parse(JMV)
-    let projectType = flags.projectType
+    let projectType = undefined
     if (!projectType) {
       let responses: any = await inquirer.prompt([{
         name: 'projectType',
