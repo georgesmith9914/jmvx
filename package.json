@@ -1,6 +1,6 @@
 {
   "name": "jmvx",
-  "version": "0.0.64",
+  "version": "0.0.65",
   "description": "JoinMyVerse CLI",
   "author": "JoinMyVerse",
   "bin": {
