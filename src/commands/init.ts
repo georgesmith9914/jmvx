@@ -1,5 +1,6 @@
 import {Command, Flags} from '@oclif/core'
 import * as inquirer from 'inquirer'
+import linkTreePagesAPI from '../api/create-scene-from-linktree'
 
 export class JMV extends Command {
   static flags = {
@@ -36,6 +37,20 @@ export class JMV extends Command {
         sceneType = responses.sceneType
       }
       this.log(`the scene type is: ${sceneType}`)
+      interface LinkTreePage {
+        name: string;
+        link: string;
+      }
+
+      let linkTreePages: LinkTreePage[] = linkTreePagesAPI.list();
+      this.log(linkTreePages.length + "")
+      let pageName = linkTreePages[0].name
+      this.log(pageName + " " + linkTreePages[0].link)
+
+      //Create a module to extract hyperlinks from a page
+
+      //Crawl contents of a given hyperlink
+      
     }
   }
 }
