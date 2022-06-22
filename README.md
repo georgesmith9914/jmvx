@@ -29,7 +29,7 @@ $ npm install -g jmvx
 $ jmv COMMAND
 running command...
 $ jmv (--version)
-jmvx/0.0.62 win32-x64 node-v16.15.0
+jmvx/0.0.63 win32-x64 node-v16.15.0
 $ jmv --help [COMMAND]
 USAGE
   $ jmv COMMAND
