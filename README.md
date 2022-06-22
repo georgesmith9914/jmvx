@@ -29,7 +29,7 @@ $ npm install -g jmvx
 $ jmv COMMAND
 running command...
 $ jmv (--version)
-jmvx/0.0.63 win32-x64 node-v16.15.0
+jmvx/0.0.64 win32-x64 node-v16.15.0
 $ jmv --help [COMMAND]
 USAGE
   $ jmv COMMAND
@@ -75,7 +75,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`jmv help [COMMAND]`](#jmv-help-command)
-* [`jmv jmv init`](#jmv-jmv-init)
+* [`jmv init`](#jmv-init)
 * [`jmv plugins`](#jmv-plugins)
 * [`jmv plugins:install PLUGIN...`](#jmv-pluginsinstall-plugin)
 * [`jmv plugins:inspect PLUGIN...`](#jmv-pluginsinspect-plugin)
@@ -106,15 +106,17 @@ DESCRIPTION
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.1.12/src/commands/help.ts)_
 
-## `jmv jmv init`
+## `jmv init`
 
 ```
 USAGE
-  $ jmv jmv init [--projectType Scene|Other]
+  $ jmv init [--projectType Scene|Other]
 
 FLAGS
   --projectType=<option>  <options: Scene|Other>
 ```
+
+_See code: [dist/commands/init.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.64/dist/commands/init.ts)_
 
 ## `jmv plugins`
 
