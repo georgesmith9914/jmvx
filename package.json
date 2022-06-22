@@ -6,10 +6,10 @@
   "bin": {
     "jmv": "./bin/run"
   },
-  "homepage": "https://github.com/joinmyverse-cli/joinmyverse-cli",
+  "homepage": "https://github.com/georgesmith9914",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "joinmyverse-cli/joinmyverse-cli",
+  "repository": "jmvx",
   "files": [
     "/bin",
     "/dist",
@@ -67,7 +67,7 @@
   "engines": {
     "node": ">=12.0.0"
   },
-  "bugs": "https://github.com/joinmyverse-cli/joinmyverse-cli/issues",
+  "bugs": "https://github.com/georgesmith9914/jmvx/issues",
   "keywords": [
     "oclif"
   ],
