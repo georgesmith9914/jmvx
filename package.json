@@ -21,13 +21,17 @@
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.0.1",
     "@types/inquirer": "^8.2.1",
-    "inquirer": "^8.2.3"
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.2.3",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@oclif/test": "^2",
     "@types/chai": "^4",
+    "@types/fs-extra": "^9.0.13",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.9.4",
+    "@types/node-fetch": "^2.6.2",
     "chai": "^4",
     "eslint": "^7.32.0",
     "eslint-config-oclif": "^4",
