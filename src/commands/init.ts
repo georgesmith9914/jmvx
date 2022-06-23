@@ -75,7 +75,7 @@ export const repos = {
   scenes: [
     {
       title: 'From Linktree page',
-      url: 'https://github.com/georgesmith9914/gamifier/archive/refs/heads/main.zip'
+      url: 'https://github.com/georgesmith9914/create-scene-from-linktree/archive/refs/heads/main.zip'
     },
     {
       title: 'From blog',
