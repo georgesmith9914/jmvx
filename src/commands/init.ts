@@ -11,7 +11,7 @@ export class JMV extends Command {
   }
 
   static flagsSceneTypes = {
-    sceneType: Flags.string({options: ['From Linktree page', 'From blog']})
+    sceneType: Flags.string({options: ['From images', 'From blog']})
   }
 
   async run() {
@@ -35,7 +35,7 @@ export class JMV extends Command {
           name: 'sceneType',
           message: 'select a scene type',
           type: 'list',
-          choices: [{name: 'From Linktree page'}, {name: 'From blog'}],
+          choices: [{name: 'From images'}, {name: 'From blog'}],
         }])
         sceneType = responses.sceneType
       }
@@ -48,7 +48,7 @@ export class JMV extends Command {
         writeFile(dest, Buffer.from(data))
       }
 
-      downloadFile("" + getRepositoryUrl("scene", "From Linktree page"), "main.zip");
+      downloadFile("" + getRepositoryUrl("scene", "From images"), "main.zip");
 
       //Download repo
       
@@ -89,7 +89,7 @@ export const repos = {
 
 
 export function getRepositoryUrl(contentType: string, contentName: string): string | void{
-    if (contentType == "scene" && contentName == "From Linktree page") {
+    if (contentType == "scene" && contentName == "From images") {
       return repos.scenes[0].url
     }
 }
