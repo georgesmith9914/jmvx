@@ -3,6 +3,9 @@ import * as inquirer from 'inquirer'
 import fetch from 'node-fetch'
 //import { move, readdir, remove, writeFile } from 'fs-extra'
 import { access, writeFile } from 'node:fs/promises';
+import * as fs from 'fs';
+const extract = require('extract-zip')
+
 //import linkTreePagesAPI from '../../api/create-scene-from-linktree'
 
 export class JMV extends Command {
@@ -39,16 +42,31 @@ export class JMV extends Command {
         }])
         sceneType = responses.sceneType
       }
-      this.log(`the scene type is: ${sceneType}`)
+      this.log(`the scene type is..: ${sceneType}`)
       this.log("URL is " + getRepositoryUrl("scene", sceneType + ''))
 
-      const downloadFile = async function (url: string, dest: string) {
-        const data = await (await fetch(url)).arrayBuffer()
-        //await writeFile(dest, Buffer.from(data))
-        writeFile(dest, Buffer.from(data))
+      const util = require('util')
+      const fs = require('fs')
+      const streamPipeline = util.promisify(require('stream').pipeline)
+      
+      const fetch = require('node-fetch')
+      
+      async function download (url: string, dest: string) {
+        const response = await fetch('https://github.com/georgesmith9914/create-scene-from-images/archive/refs/heads/main.zip')
+        console.log(response);
+        if (!response.ok) throw new Error(`unexpected response ${response.statusText}`)
+        await streamPipeline(response.body, fs.createWriteStream('./main.zip'))
+
+      }
+      //download(url, dest)
+
+      const unzipFile = async function () {
+        console.log("came into unzip file")
+        await extract("main.zip", { dir: process. cwd() })
       }
 
-      downloadFile("" + getRepositoryUrl("scene", "From images"), "main.zip");
+      await download("" + getRepositoryUrl("scene", "From images"), "main.zip");
+      await unzipFile();
 
       //Download repo
       
@@ -75,7 +93,7 @@ export const repos = {
   scenes: [
     {
       title: 'From images',
-      url: 'https://github.com/georgesmith9914/create-scene-from-images.git/archive/refs/heads/main.zip'
+      url: 'https://github.com/georgesmith9914/create-scene-from-images/archive/refs/heads/main.zip'
     },
     {
       title: 'From blog',
