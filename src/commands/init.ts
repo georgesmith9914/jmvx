@@ -67,7 +67,12 @@ export class JMV extends Command {
 
       await download("" + getRepositoryUrl("scene", "From images"), "main.zip");
       await unzipFile();
-
+      try {
+        fs.unlinkSync("main.zip")
+        //file removed
+      } catch(err) {
+        console.error(err)
+      }
       //Download repo
       
 
