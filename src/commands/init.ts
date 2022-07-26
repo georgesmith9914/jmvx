@@ -8,7 +8,7 @@ const extract = require('extract-zip')
 
 //import linkTreePagesAPI from '../../api/create-scene-from-linktree'
 
-export class JMV extends Command {
+export class JMVInit extends Command {
   static flags = {
     projectType: Flags.string({options: ['Scene', 'Other']})
   }
@@ -18,7 +18,7 @@ export class JMV extends Command {
   }
 
   async run() {
-    const {flags} = await this.parse(JMV)
+    const {flags} = await this.parse(JMVInit)
     let projectType = undefined
     if (!projectType) {
       let responses: any = await inquirer.prompt([{
