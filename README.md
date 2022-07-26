@@ -29,7 +29,7 @@ $ npm install -g jmvx
 $ jmv COMMAND
 running command...
 $ jmv (--version)
-jmvx/0.0.72 win32-x64 node-v16.15.0
+jmvx/0.0.73 win32-x64 node-v16.15.0
 $ jmv --help [COMMAND]
 USAGE
   $ jmv COMMAND
@@ -85,6 +85,7 @@ USAGE
 * [`jmv plugins:uninstall PLUGIN...`](#jmv-pluginsuninstall-plugin-1)
 * [`jmv plugins:uninstall PLUGIN...`](#jmv-pluginsuninstall-plugin-2)
 * [`jmv plugins update`](#jmv-plugins-update)
+* [`jmv publish`](#jmv-publish)
 
 ## `jmv help [COMMAND]`
 
@@ -116,7 +117,7 @@ FLAGS
   --projectType=<option>  <options: Scene|Other>
 ```
 
-_See code: [dist/commands/init.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.72/dist/commands/init.ts)_
+_See code: [dist/commands/init.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.73/dist/commands/init.ts)_
 
 ## `jmv plugins`
 
@@ -347,6 +348,18 @@ FLAGS
 DESCRIPTION
   Update installed plugins.
 ```
+
+## `jmv publish`
+
+```
+USAGE
+  $ jmv publish [--projectType Scene|Other]
+
+FLAGS
+  --projectType=<option>  <options: Scene|Other>
+```
+
+_See code: [dist/commands/publish.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.73/dist/commands/publish.ts)_
 <!-- commandsstop -->
 * [`jmv help [COMMAND]`](#jmv-help-command)
 * [`jmv jmv init`](#jmv-jmv-init)
