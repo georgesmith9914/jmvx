@@ -4,7 +4,10 @@ import fetch from 'node-fetch'
 //import { move, readdir, remove, writeFile } from 'fs-extra'
 import { access, writeFile } from 'node:fs/promises';
 import * as fs from 'fs';
-const extract = require('extract-zip')
+const extract = require('extract-zip');
+const simpleGit = require('simple-git');
+const git = simpleGit()
+
 
 //import linkTreePagesAPI from '../../api/create-scene-from-linktree'
 
@@ -51,11 +54,12 @@ export class JMVInit extends Command {
       
       const fetch = require('node-fetch')
       
-      async function download (url: string, dest: string) {
-        const response = await fetch('https://github.com/georgesmith9914/create-scene-from-images/archive/refs/heads/main.zip')
+      async function download (url: string) {
+        await git.clone(url);
+        /*const response = await fetch('https://github.com/georgesmith9914/create-scene-from-images/archive/refs/heads/main.zip')
         console.log(response);
         if (!response.ok) throw new Error(`unexpected response ${response.statusText}`)
-        await streamPipeline(response.body, fs.createWriteStream('./main.zip'))
+        await streamPipeline(response.body, fs.createWriteStream('./main.zip'))*/
 
       }
       //download(url, dest)
@@ -65,14 +69,14 @@ export class JMVInit extends Command {
         await extract("main.zip", { dir: process. cwd() })
       }
 
-      await download("" + getRepositoryUrl("scene", "From images"), "main.zip");
-      await unzipFile();
+      await download("" + getRepositoryUrl("scene", "From images"));
+      /*await unzipFile();
       try {
         fs.unlinkSync("main.zip")
         //file removed
       } catch(err) {
         console.error(err)
-      }
+      } */
       //Download repo
       
 
@@ -98,7 +102,7 @@ export const repos = {
   scenes: [
     {
       title: 'From images',
-      url: 'https://github.com/georgesmith9914/create-scene-from-images/archive/refs/heads/main.zip'
+      url: 'https://github.com/georgesmith9914/create-scene-from-images.git'
     },
     {
       title: 'From blog',
