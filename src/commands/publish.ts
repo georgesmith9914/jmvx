@@ -24,7 +24,7 @@ export class JMVPublish extends Command {
   async run() {
     const {flags} = await this.parse(JMVPublish)
     try {
-      process.chdir('./create-scene-from-images-main');
+      process.chdir('./create-scene-from-images');
       console.log('New directory: ' + process.cwd());
       await exec('npm install');
       require('child_process').fork('server.js');
