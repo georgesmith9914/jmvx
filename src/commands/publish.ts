@@ -26,8 +26,45 @@ export class JMVPublish extends Command {
     try {
       process.chdir('./create-scene-from-images');
       console.log('New directory: ' + process.cwd());
-      await exec('npm install');
-      require('child_process').fork('server.js');
+      var installObj = await exec('npm install');
+      console.log(installObj);
+      //await exec('server.js');
+        var child_process = require('child_process');
+
+        console.log("Node Version: ", process.version);
+
+        run_script("node", ["server.js"], function(output, exit_code) {
+            console.log("Process Finished.");
+            console.log('closing code: ' + exit_code);
+            console.log('Full output of script: ',output);
+        });
+
+        function run_script(command, args, callback) {
+          console.log("Starting Process.");
+          var child = child_process.spawn(command, args);
+      
+          var scriptOutput = "";
+      
+          child.stdout.setEncoding('utf8');
+          child.stdout.on('data', function(data) {
+              console.log('stdout: ' + data);
+      
+              data=data.toString();
+              scriptOutput+=data;
+          });
+      
+          child.stderr.setEncoding('utf8');
+          child.stderr.on('data', function(data) {
+              console.log('stderr: ' + data);
+      
+              data=data.toString();
+              scriptOutput+=data;
+          });
+      
+          child.on('close', function(code) {
+              callback(scriptOutput,code);
+          });
+      }
 
     }
     catch (err) {
