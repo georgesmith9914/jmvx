@@ -7,7 +7,6 @@ import * as fs from 'fs';
 const extract = require('extract-zip');
 const open = require('open');
 const util = require('util');
-const exec = util.promisify(require('child_process').exec);
 
 
 //import linkTreePagesAPI from '../../api/create-scene-from-linktree'
@@ -24,26 +23,10 @@ export class JMVPublish extends Command {
   async run() {
     const {flags} = await this.parse(JMVPublish)
     try {
-      process.chdir('./create-scene-from-images');
-      console.log('New directory: ' + process.cwd());
-
-      const { fork } = require('child_process');
-
-      const forked = fork('server.js');
-      
-      forked.on('message', (msg) => {
-        console.log('Message from child', msg);
-      });
-      
-      //forked.send({ hello: 'world' });
-    }
-    catch (err) {
+      await open('http://localhost:3000/publisher.html', {app: {name: 'chrome'}});
+    }catch (err) {
       console.log('chdir: ' + err);
     }
-
-    await open('http://localhost:3000/publisher.html', {app: {name: 'chrome'}});
-    console.log('The image viewer app quit');
-
   }
 }
 
