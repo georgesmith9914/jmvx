@@ -29,7 +29,7 @@ $ npm install -g jmvx
 $ jmv COMMAND
 running command...
 $ jmv (--version)
-jmvx/0.0.76 win32-x64 node-v16.15.0
+jmvx/0.0.77 win32-x64 node-v16.15.0
 $ jmv --help [COMMAND]
 USAGE
   $ jmv COMMAND
@@ -76,6 +76,7 @@ USAGE
 <!-- commands -->
 * [`jmv help [COMMAND]`](#jmv-help-command)
 * [`jmv init`](#jmv-init)
+* [`jmv install`](#jmv-install)
 * [`jmv plugins`](#jmv-plugins)
 * [`jmv plugins:install PLUGIN...`](#jmv-pluginsinstall-plugin)
 * [`jmv plugins:inspect PLUGIN...`](#jmv-pluginsinspect-plugin)
@@ -117,7 +118,16 @@ FLAGS
   --projectType=<option>  <options: Scene|Other>
 ```
 
-_See code: [dist/commands/init.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.76/dist/commands/init.ts)_
+_See code: [dist/commands/init.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.77/dist/commands/init.ts)_
+
+## `jmv install`
+
+```
+USAGE
+  $ jmv install
+```
+
+_See code: [dist/commands/install.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.77/dist/commands/install.ts)_
 
 ## `jmv plugins`
 
@@ -359,7 +369,7 @@ FLAGS
   --projectType=<option>  <options: Scene|Other>
 ```
 
-_See code: [dist/commands/publish.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.76/dist/commands/publish.ts)_
+_See code: [dist/commands/publish.ts](https://github.com/joinmyverse-cli/joinmyverse-cli/blob/v0.0.77/dist/commands/publish.ts)_
 <!-- commandsstop -->
 * [`jmv help [COMMAND]`](#jmv-help-command)
 * [`jmv jmv init`](#jmv-jmv-init)
