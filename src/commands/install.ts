@@ -12,37 +12,20 @@ const exec = util.promisify(require('child_process').exec);
 
 //import linkTreePagesAPI from '../../api/create-scene-from-linktree'
 
-export class JMVPublish extends Command {
-  static flags = {
-    projectType: Flags.string({options: ['Scene', 'Other']})
-  }
-
-  static flagsSceneTypes = {
-    sceneType: Flags.string({options: ['From images', 'From blog']})
-  }
+export class JMVInstall extends Command {
 
   async run() {
-    const {flags} = await this.parse(JMVPublish)
+    const {flags} = await this.parse(JMVInstall)
     try {
       process.chdir('./create-scene-from-images');
       console.log('New directory: ' + process.cwd());
-
-      const { fork } = require('child_process');
-
-      const forked = fork('server.js');
+      var installObj = await exec('npm install');
+      console.log(installObj);
       
-      forked.on('message', (msg) => {
-        console.log('Message from child', msg);
-      });
-      
-      //forked.send({ hello: 'world' });
     }
     catch (err) {
       console.log('chdir: ' + err);
     }
-
-    await open('http://localhost:3000/publisher.html', {app: {name: 'chrome'}});
-    console.log('The image viewer app quit');
 
   }
 }
