@@ -29,7 +29,7 @@
     "simple-git": "^3.10.0",
     "unzip": "^0.1.11",
     "unzipper": "^0.10.11",
-    "util": "^0.12.4"
+    "util": "^0.12.5"
   },
   "devDependencies": {
     "@oclif/test": "^2",
